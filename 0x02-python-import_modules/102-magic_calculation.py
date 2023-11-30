@@ -1,20 +1,17 @@
 #!/usr/bin/python3
 
-if __name__ == "__main__":
-    """Handle basic arithmetic operations."""
-    from calculator_1 import add, sub, mul, div
-    import sys
+def magic_calculation(a, b):
+    c = 0
+    if a < b:
+        add = __import__('magic_calculation_102').add
+        sub = __import__('magic_calculation_102').sub
+        c = add(a, b)
+        for i in range(4, 6):
+            c = add(c, i)
+        return c
+    else:
+        return __import__('magic_calculation_102').sub(a, b)
 
-    if len(sys.argv) - 1 != 3:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        sys.exit(1)
-
-    ops = {"+": add, "-": sub, "*": mul, "/": div}
-    if sys.argv[2] not in list(ops.keys()):
-        print("Unknown operator. Available operators: +, -, * and /")
-        sys.exit(1)
-
-    a = int(sys.argv[1])
-    b = int(sys.argv[3])
-    print("{} {} {} = {}".format(a, sys.argv[2], b, ops[sys.argv[2]](a, b)))
-
+# Testing the function
+result = magic_calculation(3, 2)
+print(result)
