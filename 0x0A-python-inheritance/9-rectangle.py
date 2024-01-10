@@ -1,46 +1,42 @@
 #!/usr/bin/python3
+"""Module 9-rectangle
+Creates a Rectangle class
+"""
 
-class BaseGeometry:
-    """Base class for geometry."""
 
-    def area(self):
-        """Raises an Exception with the message 'area() is not implemented'."""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """Validates the value.
-        
-        Args:
-            name (str): The name of the value.
-            value: The value to be validated.
-        """
-        if type(value) is not int:
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """Rectangle class that inherits from BaseGeometry."""
+    """Represents a rectangle
+    Private instances attributes:
+        - width
+        - height
+    Public method area()
+    Inherits from BaseGeometry
+    """
 
     def __init__(self, width, height):
-        """
-        Initialize a new Rectangle.
+        """Initializes an instance
 
         Args:
-            width (int): The width of the rectangle.
-            height (int): The height of the rectangle.
+            - width: rectangle width
+            - height: rectangle height
         """
+
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
         self.__height = height
 
-    def area(self):
-        """Compute the area of the rectangle."""
-        return self.__width * self.__height
-
     def __str__(self):
-        """Return the string representation of the rectangle."""
-        return f"[Rectangle] {self.__width}/{self.__height}"
+        """Returns a formatted string"""
 
+        return str("[Rectangle] {}/{}".format(self.__width, self.__height))
+
+    def area(self):
+        """Computes the area of the rectangle instance
+        Overwrites the area() method from BaseGeometry
+        """
+
+        return self.__width * self.__height
