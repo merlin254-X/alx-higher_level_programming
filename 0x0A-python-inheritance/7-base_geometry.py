@@ -8,7 +8,8 @@ class BaseGeometry:
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """Validates the value.
+        """
+        Validates the value.
         
         Args:
             name (str): The name of the value.
