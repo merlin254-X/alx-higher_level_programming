@@ -24,7 +24,8 @@ class Rectangle(BaseGeometry):
     """Rectangle class that inherits from BaseGeometry."""
 
     def __init__(self, width, height):
-        """Initialize a new Rectangle.
+        """
+        Initialize a new Rectangle.
 
         Args:
             width (int): The width of the rectangle.
