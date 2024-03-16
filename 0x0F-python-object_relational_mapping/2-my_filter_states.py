@@ -29,8 +29,9 @@ if __name__ == "__main__":
                    "ORDER BY id ASC", (state_name,))
 
     # Fetch all the results and print them
-    for state in cursor.fetchall():
-        print(state)
+    rows = cursor.fetchall()
+    for row in rows:
+        print(row)
 
     # Close the cursor and database connection
     cursor.close()
