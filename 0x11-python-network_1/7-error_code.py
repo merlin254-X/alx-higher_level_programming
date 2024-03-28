@@ -2,7 +2,8 @@
 """
 Sends a request to a given URL and displays the body of the response.
 
-If the HTTP status code is greater than or equal to 400, prints an error message.
+If the HTTP status code is greater than or equal to 400, prints an
+error message.
 """
 
 import requests
