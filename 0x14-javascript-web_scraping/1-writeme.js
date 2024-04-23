@@ -1,23 +1,17 @@
 #!/usr/bin/node
 /**
- * Script to write a specified content to a file.
- * - The first argument is the file path.
- * - The second argument is the content to write.
+ * reads and prints the content of a file
+ * first argument is the file path
  */
-
-const myArgs = process.argv.slice(2); /* Get command-line arguments */
-const fs = require('fs'); /* Import the File System module */
-
-fs.writeFile(
-  myArgs[0], /* File path (first argument) */
-  myArgs[1], /* Content to write (second argument) */
+const myArgs = process.argv.slice(2);
+const fs = require('fs');
+fs.writeFile(myArgs[0], myArgs[1],
   {
-    encoding: 'utf-8', /* Specify UTF-8 encoding */
-    flag: 'w', /* 'w' for write mode (overwrite if the file exists) */
+    encoding: 'utf-8',
+    flag: 'w'
   },
   (error) => {
     if (error) {
-      console.log(error); /* Handle and display error */
+      console.log(error);
     }
-  }
-);
+  });
